@@ -18,11 +18,14 @@ A plugin for [Simon Willison's LLM tool](https://github.com/simonw/llm) that add
 
 ## Usage
 
-You can use the `youtube` fragment in your LLM prompts to include subtitles from YouTube videos:
+You can use the `youtube` or `yt` fragment in your LLM prompts to include subtitles from YouTube videos:
 
 ```bash
 # Using a YouTube video ID
 llm -f youtube:dQw4w9WgXcQ "summarize this video"
+
+# You can also use the shorter 'yt' prefix
+llm -f yt:dQw4w9WgXcQ "summarize this video"
 
 # Continue chatting
 llm -c "at which minute do they talk about ..."

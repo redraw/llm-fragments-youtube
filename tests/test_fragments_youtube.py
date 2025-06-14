@@ -17,7 +17,10 @@ def test_register_fragment_loaders():
     """Test that the fragment loader is registered correctly."""
     mock_register = mock.Mock()
     register_fragment_loaders(mock_register)
-    mock_register.assert_called_once_with("youtube", youtube_loader)
+    # Check that the loader is registered under both names
+    assert mock_register.call_count == 2
+    mock_register.assert_any_call("youtube", youtube_loader)
+    mock_register.assert_any_call("yt", youtube_loader)
 
 
 def test_parse_argument_video_id():
